@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Wise Webchat</title>
+  <title>Auto-Open Botpress Webchat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
   <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
   <script>
-    // Force the chat to stay open
-    window.botpressWebChat.sendEvent({ type: 'show' });
+    // Automatically open the chat when it’s ready
+    window.botpress.on('webchat:ready', () => {
+      botpress.open();
+    });
   </script>
   <script src="https://files.bpcontent.cloud/2024/11/04/07/20241104070048-2Y5QMK1R.js"></script>
 </body>
+
 </html>
