@@ -3,42 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>My Webchat</title>
-  <style>
-    /* Custom CSS for Botpress Webchat */
-    :root {
-      --bp-background-color: #000000; /* Background color */
-      --bp-text-color: #000000;       /* Text color */
-      --bp-bubble-bg-color: #000000;  /* Chat bubble background color */
-      --bp-button-bg-color: #000000;  /* Button background color */
-      --bp-button-text-color: #000000; /* Button text color */
-    }
-
-    /* Display Restart button */
-    .bp-chat .bp-restart-btn {
-      display: block !important;
-    }
-
-    /* Dark theme customizations */
-    .bp-chat {
-      background-color: var(--bp-background-color) !important;
-      color: var(--bp-text-color) !important;
-    }
-
-    .bp-chat .bp-bubble.bp-from-user {
-      background-color: var(--bp-bubble-bg-color) !important;
-      color: var(--bp-text-color) !important;
-    }
-
-    .bp-chat .bp-btn {
-      background-color: var(--bp-button-bg-color) !important;
-      color: var(--bp-button-text-color) !important;
-    }
-  </style>
+  <title>Wise Webchat</title>
 </head>
 <body>
   <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script>
+    // Force the chat to stay open
+    window.botpressWebChat.sendEvent({ type: 'show' });
+  </script>
   <script src="https://files.bpcontent.cloud/2024/11/04/07/20241104070048-2Y5QMK1R.js"></script>
-
 </body>
 </html>
