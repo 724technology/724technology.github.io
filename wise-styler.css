@@ -1,102 +1,132 @@
 /* Main container for the chat widget */
 .bpContainer {
-    background-color: #0c332f !important;
-    /* Dark green background */
-    color: #e3d5b3 !important;
-    /* Cream text */
+  background-color: #0c332f !important;
+  /* Dark green background */
+  color: #e3d5b3 !important;
+  /* Cream text */
 }
 
 /* Modal overlay for popups */
 .bpModalOverlay {
-    background-color: rgba(12, 51, 47, 0.8) !important;
-    /* Dark green with transparency */
+  background-color: rgba(12, 51, 47, 0.8) !important;
+  /* Dark green with transparency */
 }
 
 /* Header section styles */
 .bpHeaderContainer {
-    background-color: #8b2e2f !important;
-    /* Red header */
-    color: #e3d5b3 !important;
-    /* Cream text */
+  background-color: #8b2e2f !important;
+  /* Red header */
+  color: #e3d5b3 !important;
+  /* Cream text */
 }
 
 .bpHeaderContentTitle,
 .bpHeaderContentDescription {
-    color: #e3d5b3 !important;
-    /* Cream for title and description */
+  color: #e3d5b3 !important;
+  /* Cream for title and description */
 }
 
 /* Composer (input area) */
 .bpComposerContainer {
-    background-color: #0c332f !important;
-    /* Dark green */
-    border-top: 3px solid #8b2e2f !important;
-    /* Red border */
-    border-bottom: 3px solid #8b2e2f !important;
-    /* Red border */
-    border-right: 3px solid #8b2e2f !important;
-    /* Red border */
-    border-left: 3px solid #8b2e2f !important;
-    /* Red border */
+  background-color: #0c332f !important;
+  /* Dark green */
+  border-top: 3px solid #8b2e2f !important;
+  /* Red border */
+  border-bottom: 3px solid #8b2e2f !important;
+  /* Red border */
+  border-right: 3px solid #8b2e2f !important;
+  /* Red border */
+  border-left: 3px solid #8b2e2f !important;
+  /* Red border */
 }
 
 .bpComposerInput {
-    background-color: #0c332f !important;
-    /* Cream input */
-    color: #0c332f !important;
-    /* Dark green text */
-    border: none !important;
-    border-radius: 5px !important;
+  background-color: #0c332f !important;
+  /* Cream input */
+  color: #e3d5b3 !important;
+  /* Dark green text */
+  border: none !important;
+  border-radius: 5px !important;
 }
 
 /* Send button styling */
 .bpComposerButtonContainer button {
-    background-color: #8b2e2f !important;
-    /* Red button */
-    color: #ffffff !important;
-    /* Cream text */
-    border-radius: 5px !important;
-    padding: 5px 10px !important;
+  background-color: #8b2e2f !important;
+  /* Red button */
+  color: #ffffff !important;
+  /* Cream text */
+  border-radius: 5px !important;
+  padding: 5px 10px !important;
 }
 
 /* Floating action button (FAB) */
 .bpFabContainer {
-    background-color: #8b2e2f !important;
-    /* Red for FAB */
+  background-color: #8b2e2f !important;
+  /* Red for FAB */
 }
 
 .bpFabIcon {
-    color: #e3d5b3 !important;
-    /* Cream for icon in FAB */
+  color: #e3d5b3 !important;
+  /* Cream for icon in FAB */
 }
 
 /* Notification styles */
 .bpNotificationContainer {
-    background-color: #8b2e2f !important;
-    /* Red for notification */
-    color: #e3d5b3 !important;
-    /* Cream text */
+  background-color: #8b2e2f !important;
+  /* Red for notification */
+  color: #e3d5b3 !important;
+  /* Cream text */
 }
 
 .bpNotificationTitle,
 .bpNotificationDescription {
-    color: #e3d5b3 !important;
-    /* Cream text */
+  color: #e3d5b3 !important;
+  /* Cream text */
 }
 
 /* Scrollbar customization */
 .bpMessageListScrollbarBackground {
-    background-color: #8b2e2f !important;
-    /* Red background for scrollbar */
+  background-color: #8b2e2f !important;
+  /* Red background for scrollbar */
 }
 
 .bpMessageListScrollbarThumb {
-    background-color: #e3d5b3 !important;
-    /* Cream thumb on scrollbar */
+  background-color: #e3d5b3 !important;
+  /* Cream thumb on scrollbar */
 }
 
 /* Loading indicator */
 .bpLoadingIndicatorLoader {
-    border-top-color: #8b2e2f !important;
-    /* Red for loading indicator */
+  border-top-color: #8b2e2f !important;
+  /* Red for loading indicator */
 }
+
+/* Target buttons inside Botpress messages */
+.bpMessageBlocksButton {
+  border: 3px solid #8b2e2f !important; /* Cream-colored border */
+  border-radius: 15px !important;        /* Rounded corners */
+  padding: 5px 10px !important;         /* Padding for button */
+  background-color: #0c332f !important; /* Background color for button */
+  color: #e3d5b3 !important;            /* Text color */
+}
+
+.bpMessageBlocksCarouselContainer {
+  border: 3px solid #8b2e2f !important; /* Cream-colored border */
+  border-radius: 50px !important;        /* Rounded corners */
+  background-color: #0c332f !important; /* Background color for button */
+  color: #ffffff !important;   /* Text color */
+}
+
+.bpMessageBlocksCarouselNextButton {
+  border: 3px solid #8b2e2f !important; /* Cream-colored border */
+  border-radius: 50px !important;        /* Rounded corners */
+  background-color: #8b2e2f !important; /* Background color for button */
+  color: #e3d5b3 !important;   /* Text color */
+}
+
+.bpMessageBlocksCarouselBackButton {
+  border: 3px solid #8b2e2f !important; /* Cream-colored border */
+  background-color: #8b2e2f !important; /* Background color for button */
+  color: #e3d5b3 !important;   /* Text color */
+}
+
