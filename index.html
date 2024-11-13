@@ -9,13 +9,12 @@
 </head>
 
 <body>
-  <!-- Instagram tarayıcısında ise dış tarayıcıya yönlendirme kodu -->
+  <!-- Instagram tarayıcısında otomatik yönlendirme -->
   <script>
-    // Instagram tarayıcısını tespit etme
+    // Instagram tarayıcısını tespit etme ve dış tarayıcıya yönlendirme
     if (navigator.userAgent.includes("Instagram")) {
-      alert("Botun doğru çalışması için lütfen tarayıcıda açın.");
-      // Kullanıcıyı dış tarayıcıya yönlendirmek için
-      window.location.href = "https://724technology.github.io/";
+      // Instagram içindeyken kullanıcıyı otomatik olarak dış tarayıcıya yönlendir
+      window.location.replace("https://724technology.github.io/");
     }
   </script>
 
