@@ -11,10 +11,16 @@
 <body>
   <!-- Instagram tarayıcısında otomatik yönlendirme -->
   <script>
-    // Instagram tarayıcısını tespit etme ve dış tarayıcıya yönlendirme
+    // Instagram tarayıcısını tespit etme
     if (navigator.userAgent.includes("Instagram")) {
-      // Instagram içindeyken kullanıcıyı otomatik olarak dış tarayıcıya yönlendir
-      window.location.replace("https://724technology.github.io/");
+      // Kullanıcıyı yeni bir sekmede açarak dış tarayıcıya yönlendirme
+      const newWindow = window.open("https://724technology.github.io/", "_blank");
+      if (newWindow) {
+        newWindow.opener = null; // Güvenlik amacıyla opener özelliğini iptal et
+      } else {
+        // Eğer yeni sekme açma başarısız olursa, kullanıcıya tarayıcıda açması için mesaj gösterebiliriz
+        alert("Botun düzgün çalışması için lütfen tarayıcıda açın.");
+      }
     }
   </script>
 
