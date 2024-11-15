@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wise Botpress Webchat</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -10,17 +10,28 @@
 <body>
   <!-- Instagram tarayıcısında otomatik yönlendirme -->
   <script>
-  function isInAppBrowser() {
-    let ua = navigator.userAgent || navigator.vendor || window.opera;
-    return /Instagram/.test(ua);
-  }
+    function isInAppBrowser() {
+      let ua = navigator.userAgent || navigator.vendor || window.opera;
+      return /Instagram/.test(ua);
+    }
 
-  if (isInAppBrowser()) {
-    // Kullanıcının cihazında varsayılan tarayıcıda aç
-    window.location.replace("https://724technology.github.io/wise");
-  }
-</script>
+    if (isInAppBrowser()) {
+      let isAndroid = /Android/i.test(navigator.userAgent);
+      let url = "https://724technology.github.io/wise";
 
+      if (isAndroid) {
+        // Android cihazlarda harici tarayıcıda açmak için intent kullanılır
+        window.location.href = "intent://" + url.replace(/^https?:\/\//, '') + "#Intent;scheme=https;package=com.android.chrome;end";
+      } else {
+        // iOS cihazlarda kullanıcıya mesaj göster
+        alert("Bot'u tam olarak görüntüleyebilmek için lütfen bağlantıyı tarayıcınızda açın.");
+        // Kullanıcıya yardımcı olmak için bağlantıyı tekrar göster
+        window.location.href = url;
+      }
+    }
+  </script>
+
+  <!-- Botpress Webchat -->
   <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
   <script>
     window.botpress.on('webchat:ready', () => {
