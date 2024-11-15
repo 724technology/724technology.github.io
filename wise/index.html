@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <!-- Instagram tarayıcısında otomatik yönlendirme -->
+  <!-- Instagram tarayıcısında manuel yönlendirme için kontrol -->
   <script>
     function isInAppBrowser() {
       let ua = navigator.userAgent || navigator.vendor || window.opera;
@@ -16,18 +16,12 @@
     }
 
     if (isInAppBrowser()) {
-      let isAndroid = /Android/i.test(navigator.userAgent);
-      let url = "https://724technology.github.io/wise";
-
-      if (isAndroid) {
-        // Android cihazlarda harici tarayıcıda açmak için intent kullanılır
-        window.location.href = "intent://" + url.replace(/^https?:\/\//, '') + "#Intent;scheme=https;package=com.android.chrome;end";
-      } else {
-        // iOS cihazlarda kullanıcıya mesaj göster
-        alert("Bot'u tam olarak görüntüleyebilmek için lütfen bağlantıyı tarayıcınızda açın.");
-        // Kullanıcıya yardımcı olmak için bağlantıyı tekrar göster
-        window.location.href = url;
-      }
+      document.body.innerHTML = `
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center;">
+          <p>Bot'u daha iyi görüntülemek için tarayıcınızda açın.</p>
+          <a href="https://724technology.github.io/wise" style="margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;" target="_blank" rel="noopener noreferrer">Tarayıcıda Aç</a>
+        </div>
+      `;
     }
   </script>
 
