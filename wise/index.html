@@ -19,9 +19,13 @@
       document.body.innerHTML = `
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center;">
           <p>Bot'u daha iyi görüntülemek için tarayıcınızda açın.</p>
-          <a href="https://724technology.github.io/wise" style="margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 5px;" target="_blank" rel="noopener noreferrer">Tarayıcıda Aç</a>
+          <button id="openBrowser" style="margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border: none; border-radius: 5px; cursor: pointer;">Tarayıcıda Aç</button>
         </div>
       `;
+
+      document.getElementById("openBrowser").addEventListener("click", function() {
+        window.open("https://724technology.github.io/wise", "_blank");
+      });
     }
   </script>
 
