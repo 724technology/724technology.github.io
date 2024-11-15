@@ -6,36 +6,9 @@
   <title>Wise Botpress Webchat</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
 <body>
-  <!-- Instagram tarayıcısında manuel yönlendirme için kontrol -->
-  <script>
-    function isInAppBrowser() {
-      let ua = navigator.userAgent || navigator.vendor || window.opera;
-      return /Instagram/.test(ua);
-    }
-
-    if (isInAppBrowser()) {
-      document.body.innerHTML = `
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center;">
-          <p>Bot'u daha iyi görüntülemek için tarayıcınızda açın.</p>
-          <button id="openBrowser" style="margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: #fff; text-decoration: none; border: none; border-radius: 5px; cursor: pointer;">Tarayıcıda Aç</button>
-        </div>
-      `;
-
-      document.getElementById("openBrowser").addEventListener("click", function() {
-        window.open("https://724technology.github.io/wise", "_blank");
-      });
-    }
-  </script>
-
-  <!-- Botpress Webchat -->
+  <!-- Botpress Webchat Embed -->
   <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
-  <script>
-    window.botpress.on('webchat:ready', () => {
-      botpress.open();
-    });
-  </script>
   <script src="https://files.bpcontent.cloud/2024/11/04/07/20241104070048-2Y5QMK1R.js"></script>
 </body>
 </html>
