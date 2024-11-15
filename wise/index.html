@@ -6,9 +6,25 @@
   <title>Wise Botpress Webchat</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
   <!-- Botpress Webchat Embed -->
   <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
   <script src="https://files.bpcontent.cloud/2024/11/04/07/20241104070048-2Y5QMK1R.js"></script>
+
+  <script>
+    // Function to detect Instagram in-app browser
+    function isInAppBrowser() {
+      let ua = navigator.userAgent || navigator.vendor || window.opera;
+      return /Instagram/.test(ua);
+    }
+
+    // Automatically open chat for all browsers except Instagram
+    if (!isInAppBrowser()) {
+      window.botpress.on('webchat:ready', () => {
+        botpress.open();
+      });
+    }
+  </script>
 </body>
 </html>
