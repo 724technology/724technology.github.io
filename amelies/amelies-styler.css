@@ -1,0 +1,139 @@
+/* Main container for the chat widget */
+.bpContainer {
+  background-color: #fbe929 !important; /* Bright yellow background */
+  color: #000000 !important; /* Black text */
+}
+
+/* Dialog title container */
+.bpModalDialogTitleContainer {
+  background-color: #fbe929 !important; /* Bright yellow background */
+  color: #000000 !important; /* Black text */
+}
+
+/* Modal overlay for popups */
+.bpModalOverlay {
+  background-color: #fbe929 !important; /* Yellow with transparency */
+}
+
+/* Header section styles */
+.bpHeaderContainer {
+  background-color: #000000 !important; /* Black header */
+  color: #fbe929 !important; /* Yellow text */
+}
+
+.bpHeaderContentTitle,
+.bpHeaderContentDescription {
+  color: #fbe929 !important; /* Yellow for title and description */
+}
+
+/* Composer (input area) */
+.bpComposerContainer {
+  background-color: #fbe929 !important; /* Yellow background */
+  border-top: 3px solid #000000 !important; /* Black border */
+  border-bottom: 3px solid #000000 !important; /* Black border */
+  border-right: 3px solid #000000 !important; /* Black border */
+  border-left: 3px solid #000000 !important; /* Black border */
+}
+
+.bpComposerInput {
+  background-color: #fbe929 !important; /* Yellow input */
+  color: #000000 !important; /* Black text */
+  border: none !important;
+  border-radius: 5px !important;
+}
+
+/* Send button styling */
+.bpComposerButtonContainer button {
+  background-color: #000000 !important; /* Black button */
+  color: #fbe929 !important; /* Yellow text */
+  border-radius: 5px !important;
+  padding: 5px 10px !important;
+}
+
+/* Floating action button (FAB) */
+.bpFabContainer {
+  background-color: #000000 !important; /* Black for FAB */
+}
+
+.bpFabIcon {
+  color: #fbe929 !important; /* Yellow for icon in FAB */
+}
+
+/* Notification styles */
+.bpNotificationContainer {
+  background-color: #000000 !important; /* Black for notification */
+  color: #fbe929 !important; /* Yellow text */
+}
+
+.bpNotificationTitle,
+.bpNotificationDescription {
+  color: #fbe929 !important; /* Yellow text */
+}
+
+/* Scrollbar customization */
+.bpMessageListScrollbarBackground {
+  background-color: #000000 !important; /* Black background for scrollbar */
+}
+
+.bpMessageListScrollbarThumb {
+  background-color: #fbe929 !important; /* Yellow thumb on scrollbar */
+}
+
+/* Loading indicator */
+.bpLoadingIndicatorLoader {
+  border-top-color: #000000 !important; /* Black for loading indicator */
+}
+
+/* Target buttons inside Botpress messages */
+.bpMessageBlocksButton {
+  border: 3px solid #000000 !important; /* Black-colored border */
+  border-radius: 15px !important; /* Rounded corners */
+  padding: 5px 10px !important; /* Padding for button */
+  background-color: #fbe929 !important; /* Yellow background for button */
+  color: #000000 !important; /* Black text */
+}
+
+.bpMessageBlocksCarouselContainer {
+  border: 3px solid #000000 !important; /* Black-colored border */
+  border-radius: 50px !important; /* Rounded corners */
+  background-color: #fbe929 !important; /* Yellow background */
+  color: #000000 !important; /* Black text */
+}
+
+.bpMessageBlocksCarouselNextButton {
+  border: 3px solid #000000 !important; /* Black-colored border */
+  border-radius: 50px !important; /* Rounded corners */
+  background-color: #000000 !important; /* Black background */
+  color: #fbe929 !important; /* Yellow text */
+}
+
+.bpMessageBlocksCarouselBackButton {
+  border: 3px solid #000000 !important; /* Black-colored border */
+  background-color: #000000 !important; /* Black background */
+  color: #fbe929 !important; /* Yellow text */
+}
+
+.bpMessageListMarqueeContent {
+  border: 3px solid #000000 !important; /* Black-colored border */
+  color: #fbe929 !important; /* Yellow text */
+  border-radius: 10px;
+}
+
+.bpMessageListMarqueeTitle {
+  color: #000000 !important; /* Yellow text */
+}
+
+.bpMessageListMarqueeDescription {
+  color: #000000 !important; /* Yellow text */
+}
+
+.bpMessageListMarqueeAvatarContainer {
+  border: 3px solid #000000 !important; /* Black-colored border */
+}
+
+.bpModalDialogTitleContainer {
+  border: 3px solid #000000 !important; /* Black-colored border */
+  background-color: #000000 !important; /* Black background */
+  color: #fbe929 !important; /* Yellow text */
+}
+
