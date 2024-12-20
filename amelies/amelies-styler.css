@@ -96,6 +96,12 @@
   color: #ffffff !important;
 }
 
+.bpMessageBlocksCarouselContainer h1, 
+.bpMessageBlocksCarouselContainer h2 {
+    color: #ffffff !important; /* Set all heading tags inside carousel to white */
+}
+
+
 .bpMessageBlocksCarouselNextButton,
 .bpMessageBlocksCarouselBackButton {
   border: 3px solid #666666 !important;
