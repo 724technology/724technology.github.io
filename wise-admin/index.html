@@ -1,34 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Event Image</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wise Botpress Webchat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('https://raw.githubusercontent.com/724technology/724technology.github.io/refs/heads/main/wise/wise-background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    #preview {
+      max-width: 300px;
+      margin-top: 10px;
+      border-radius: 8px;
+      display: none;
+    }
+  </style>
 </head>
-<body>
-    <h2>Upload Event Image</h2>
-    <input type="file" id="imageInput" accept="image/*">
-    <button onclick="convertToBase64()">Upload</button>
-    <textarea id="base64Output" rows="5" cols="50" readonly></textarea>
-    <p>Paste this Base64 in Botpress</p>
 
-    <script>
-        function convertToBase64() {
-            const file = document.getElementById("imageInput").files[0];
-            if (!file) {
-                alert("Please select a file!");
-                return;
-            }
+<body class="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
 
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = function () {
-                document.getElementById("base64Output").value = reader.result;
-            };
-            reader.onerror = function (error) {
-                console.error("Error converting file:", error);
-            };
-        }
-    </script>
+  <!-- Upload Box -->
+  <div class="bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm text-center">
+    <h2 class="text-lg font-semibold mb-2">Upload Event Image</h2>
+    <input type="file" id="imageInput" accept="image/*" class="block w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:font-semibold file:bg-indigo-600 file:text-white hover:file:bg-indigo-700 cursor-pointer" />
+    <button onclick="convertToBase64()" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full">Upload</button>
+    <textarea id="base64Output" class="mt-4 w-full p-2 bg-gray-700 text-white text-sm rounded hidden" rows="3" readonly></textarea>
+    <img id="preview" />
+  </div>
+
+  <!-- Botpress Webchat -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2024/11/04/07/20241104070048-2Y5QMK1R.js"></script>
+
+  <script>
+    function convertToBase64() {
+      const file = document.getElementById("imageInput").files[0];
+      if (!file) {
+        alert("Please select a file!");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = function () {
+        const base64String = reader.result;
+        document.getElementById("base64Output").value = base64String;
+        document.getElementById("base64Output").classList.remove("hidden");
+        document.getElementById("preview").src = base64String;
+        document.getElementById("preview").style.display = "block";
+      };
+      reader.onerror = function (error) {
+        console.error("Error converting file:", error);
+      };
+    }
+  </script>
+
 </body>
 </html>
