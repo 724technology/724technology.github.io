@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Event Image</title>
+</head>
+<body>
+    <h2>Upload Event Image</h2>
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="convertToBase64()">Upload</button>
+    <textarea id="base64Output" rows="5" cols="50" readonly></textarea>
+    <p>Paste this Base64 in Botpress</p>
+
+    <script>
+        function convertToBase64() {
+            const file = document.getElementById("imageInput").files[0];
+            if (!file) {
+                alert("Please select a file!");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function () {
+                document.getElementById("base64Output").value = reader.result;
+            };
+            reader.onerror = function (error) {
+                console.error("Error converting file:", error);
+            };
+        }
+    </script>
+</body>
+</html>
