@@ -36,8 +36,8 @@
   <div class="bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm text-center">
     <h2 class="text-lg font-semibold mb-2">Upload Event Image</h2>
     <input type="file" id="imageInput" accept="image/*" class="block w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:font-semibold file:bg-indigo-600 file:text-white hover:file:bg-indigo-700 cursor-pointer" />
-    <button onclick="convertToBase64()" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full">Upload</button>
-    <textarea id="base64Output" class="mt-4 w-full p-2 bg-gray-700 text-white text-sm rounded hidden" rows="3" readonly></textarea>
+    <button onclick="uploadToImgur()" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full">Upload</button>
+    <input id="imageUrlOutput" class="mt-4 w-full p-2 bg-gray-700 text-white text-sm rounded hidden" readonly />
     <img id="preview" />
   </div>
 
@@ -46,7 +46,7 @@
   <script src="https://files.bpcontent.cloud/2024/11/04/07/20241104070048-2Y5QMK1R.js"></script>
 
   <script>
-    function convertToBase64() {
+    async function uploadToImgur() {
       const file = document.getElementById("imageInput").files[0];
       if (!file) {
         alert("Please select a file!");
@@ -55,13 +55,35 @@
 
       const reader = new FileReader();
       reader.readAsDataURL(file);
-      reader.onload = function () {
-        const base64String = reader.result;
-        document.getElementById("base64Output").value = base64String;
-        document.getElementById("base64Output").classList.remove("hidden");
-        document.getElementById("preview").src = base64String;
-        document.getElementById("preview").style.display = "block";
+      reader.onload = async function () {
+        const base64String = reader.result.split(',')[1]; // Get only the Base64 data
+
+        try {
+          const response = await fetch("https://api.imgur.com/3/image", {
+            method: "POST",
+            headers: {
+              "Authorization": "Client-ID 0cb1547e2ed42fc",  // Your Imgur Client ID
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ image: base64String })
+          });
+
+          const result = await response.json();
+          if (result.success) {
+            const imageUrl = result.data.link;
+            document.getElementById("imageUrlOutput").value = imageUrl;
+            document.getElementById("imageUrlOutput").classList.remove("hidden");
+            document.getElementById("preview").src = imageUrl;
+            document.getElementById("preview").style.display = "block";
+          } else {
+            alert("Upload failed: " + result.data.error);
+          }
+        } catch (error) {
+          console.error("Error uploading to Imgur:", error);
+          alert("Failed to upload image.");
+        }
       };
+
       reader.onerror = function (error) {
         console.error("Error converting file:", error);
       };
